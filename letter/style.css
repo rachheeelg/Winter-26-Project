@@ -1,0 +1,82 @@
+body {
+    background-image: url('web-texture-paper.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 40px;
+    margin: 0;
+}
+h3 {
+    font-family: 'Lilex-Light', Courier, monospace;
+    text-align: center;
+    color: #0f0f0f;
+    margin-bottom: 10px; /* Reduced gap */
+    font-size: 1.5rem; /* Smaller base size */
+    padding: 0 20px;
+}
+
+p {
+    font-family: 'Lilex-ExtraLight', Courier, monospace;
+    text-align: center;
+    color: #0f0f0f;
+    margin: 5px 40px 20px 40px; /* Reduced top margin */
+    font-size: 16px; /* Smaller base size */
+    line-height: 1.6;
+}
+
+/* Tablets and medium screens (768px and below) */
+@media (max-width: 768px) {
+    h3 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+        padding: 0 15px;
+    }
+    
+    p {
+        font-size: 14px;
+        margin: 5px 30px 15px 30px;
+    }
+    
+    body {
+        padding-bottom: 30px;
+    }
+}
+
+/* Mobile phones (480px and below) */
+@media (max-width: 480px) {
+    h3 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+        padding: 0 10px;
+    }
+    
+    p {
+        font-size: 12px;
+        margin: 5px 20px 10px 20px;
+        line-height: 1.5;
+    }
+    
+    body {
+        padding-bottom: 20px;
+    }
+}
+
+/* Large screens (1200px and above) */
+@media (min-width: 1200px) {
+    h3 {
+        font-size: 1.0rem;
+        margin-bottom: 12px;
+    }
+    
+    p {
+        font-size: 18px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
