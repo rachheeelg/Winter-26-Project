@@ -16,8 +16,8 @@ h3 {
     font-family: 'Lilex-Light', Courier, monospace;
     text-align: center;
     color: #0f0f0f;
-    margin-bottom: 30px;
-    font-size: 2rem; /* Use rem for scalability */
+    margin-bottom: 10px; /* Reduced gap */
+    font-size: 1.5rem; /* Smaller base size */
     padding: 0 20px;
 }
 
@@ -25,22 +25,22 @@ p {
     font-family: 'Lilex-ExtraLight', Courier, monospace;
     text-align: center;
     color: #0f0f0f;
-    margin: 20px 40px;
-    font-size: 18px;
+    margin: 5px 40px 20px 40px; /* Reduced top margin */
+    font-size: 16px; /* Smaller base size */
     line-height: 1.6;
 }
 
 /* Tablets and medium screens (768px and below) */
 @media (max-width: 768px) {
     h3 {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
+        font-size: 1.3rem;
+        margin-bottom: 8px;
         padding: 0 15px;
     }
     
     p {
-        font-size: 16px;
-        margin: 15px 30px;
+        font-size: 14px;
+        margin: 5px 30px 15px 30px;
     }
     
     body {
@@ -51,14 +51,14 @@ p {
 /* Mobile phones (480px and below) */
 @media (max-width: 480px) {
     h3 {
-        font-size: 1.2rem;
-        margin-bottom: 15px;
+        font-size: 1.1rem;
+        margin-bottom: 6px;
         padding: 0 10px;
     }
     
     p {
-        font-size: 14px;
-        margin: 10px 20px;
+        font-size: 12px;
+        margin: 5px 20px 10px 20px;
         line-height: 1.5;
     }
     
@@ -70,11 +70,12 @@ p {
 /* Large screens (1200px and above) */
 @media (min-width: 1200px) {
     h3 {
-        font-size: 2.5rem;
+        font-size: 1.0rem;
+        margin-bottom: 12px;
     }
     
     p {
-        font-size: 20px;
+        font-size: 18px;
         max-width: 800px;
         margin-left: auto;
         margin-right: auto;
