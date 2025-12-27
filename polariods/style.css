@@ -1,23 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-image: url('small-paper-texture.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding-bottom: 40px;
+    overflow: hidden;
+    cursor: crosshair;
+    width: 100vw;
+    height: 100vh;
+    font-family: monospace;
     margin: 0;
 }
 
+/* Text styles */
 h3 {
     font-family: 'Lilex-Light', Courier, monospace;
     text-align: center;
     color: #0f0f0f;
-    margin-bottom: 10px; /* Reduced gap */
-    font-size: 1.5rem; /* Smaller base size */
+    margin-bottom: 10px;
+    font-size: 1.5rem;
     padding: 0 20px;
 }
 
@@ -25,12 +32,63 @@ p {
     font-family: 'Lilex-ExtraLight', Courier, monospace;
     text-align: center;
     color: #0f0f0f;
-    margin: 5px 40px 20px 40px; /* Reduced top margin */
-    font-size: 16px; /* Smaller base size */
+    margin: 5px 40px 20px 40px;
+    font-size: 16px;
     line-height: 1.6;
 }
 
-/* Tablets and medium screens (768px and below) */
+/* Canvas for draggable images */
+#canvas {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Image card styles - NO FRAME */
+.memory-card {
+    position: absolute;
+    width: 280px;
+    cursor: grab;
+    transition: transform 0.1s ease-out, box-shadow 0.2s ease;
+    z-index: 10;
+    animation: fadeIn 0.6s ease-out backwards;
+}
+
+.memory-card:active {
+    cursor: grabbing;
+}
+
+.memory-card.dragging {
+    z-index: 1000;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+    transform: rotate(0deg) !important;
+}
+
+.memory-card:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Image itself - no polaroid wrapper */
+.memory-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Responsive styles for tablets (768px and below) */
 @media (max-width: 768px) {
     h3 {
         font-size: 1.3rem;
@@ -43,12 +101,12 @@ p {
         margin: 5px 30px 15px 30px;
     }
     
-    body {
-        padding-bottom: 30px;
+    .memory-card {
+        width: 220px;
     }
 }
 
-/* Mobile phones (480px and below) */
+/* Responsive styles for mobile (480px and below) */
 @media (max-width: 480px) {
     h3 {
         font-size: 1.1rem;
@@ -62,15 +120,15 @@ p {
         line-height: 1.5;
     }
     
-    body {
-        padding-bottom: 20px;
+    .memory-card {
+        width: 180px;
     }
 }
 
-/* Large screens (1200px and above) */
+/* Responsive styles for large screens (1200px and above) */
 @media (min-width: 1200px) {
     h3 {
-        font-size: 1.0rem;
+        font-size: 1.8rem;
         margin-bottom: 12px;
     }
     
@@ -79,5 +137,9 @@ p {
         max-width: 800px;
         margin-left: auto;
         margin-right: auto;
+    }
+    
+    .memory-card {
+        width: 320px;
     }
 }
