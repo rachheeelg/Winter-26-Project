@@ -18,7 +18,7 @@ const memories = [
     { image: 'pc-siblings.png' },
     { image: 'pc-summer-at-werable.png' },
     { image: 'pc-upstate-with-gianna.png' },
-    { image: 'PC-vietnam-with-girls.png' },
+    { image: 'PC-vietnam-with-girls.PNG' },
     { image: 'pc-thailand-coconut.png' }
 ];
 
